@@ -1,0 +1,213 @@
+/* ========== Variables ========== */
+:root {
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --primary: #0f766e;
+  --primary-light: #14b8a6;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --radius: 12px;
+  --transition: 0.25s ease;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --primary: #2dd4bf;
+  --primary-light: #5eead4;
+  --border: #334155;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+}
+
+/* ========== Reset & Base ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(900px, 92%);
+  margin-inline: auto;
+}
+
+/* ========== Header ========== */
+.header {
+  background: linear-gradient(135deg, var(--primary), #0d9488);
+  color: white;
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-top: 0.3rem;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.2s;
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+}
+
+/* ========== Cards ========== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-light);
+  display: inline-block;
+}
+
+/* ========== Info Grid ========== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.value {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ========== School Info ========== */
+.school-info p {
+  margin-bottom: 0.85rem;
+}
+
+.motto {
+  margin-top: 1.2rem !important;
+  font-style: italic;
+  color: var(--primary);
+  font-weight: 500;
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+}
+
+/* ========== Missions ========== */
+.missions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.missions li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.missions li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.closing {
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* ========== Footer ========== */
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ========== Animations ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .card {
+    padding: 1.3rem;
+  }
+
+  #theme-toggle {
+    top: 0.9rem;
+    right: 0.9rem;
+  }
+}

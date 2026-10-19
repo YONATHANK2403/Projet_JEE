@@ -1,29 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Mon Site</title>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERIS 1 - 2025 | Cours de Mécanique</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<h1>Le site de ERIS 1 - 2025</h1>
-	<section>
-		<h2>Information sur le module : Cours de Mecanique </h2>
-		<h3>Enseignant du module : Dr. DIAKO </h3>
-		<ol>
-			<li>Nom: ESATIC</li>
-			École SUpérieure Africaine des Technique de l'Information et de la Consultation ?
-			<li>Adresse: Boulevard de Marseille, face à Bernabé, Km 4, à Treichville, Abidjan, Côte d'Ivoire (BP 1501 Abidjan 18).</li>
-			Une vision créative et dynamique de l'innovation 
-			<li>Directeur de la DRIT: Asseu Olivier</li>
-			
-			<li>Déléguée de classe ERIS M1 2025-2026: Loic Durand</li>
-			A votre disposition pour un transfert de connaissance et de compétence.
-		</ol>
-	</section>
-	<p>
-		<pre>L’école a pour missions de : Former des cadres spécialisés dans les Technologies de l’Information et de la Communication notamment dans les domaines de réseaux et services de télécommunications /TIC, de la régulation et de la Cybersécurité ; Mener toute recherche dans le secteur des Technologies de l’Information et de la Communication ;Mettre en place un cadre de coopération nationale et internationale dans le domaine de la formation en matière de télécommunications/TIC ;
-		</pre>
-	</p>
+  <header class="header">
+    <div class="container">
+      <h1>ERIS 1 — 2025</h1>
+      <p class="subtitle">Cours de Mécanique</p>
+      <button id="theme-toggle" aria-label="Changer le thème">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Informations du module -->
+    <section class="card fade-in">
+      <h2>Informations sur le module</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">Module</span>
+          <span class="value">Cours de Mécanique</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Enseignant</span>
+          <span class="value">Dr. DIAKO</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Classe</span>
+          <span class="value">ERIS M1 2025-2026</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Délégué(e) de classe</span>
+          <span class="value">Loic Durand</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informations sur l'école -->
+    <section class="card fade-in">
+      <h2>À propos de l'ESATIC</h2>
+      <div class="school-info">
+        <p><strong>Nom complet :</strong> École Supérieure Africaine des Technologies de l'Information et de la Communication (ESATIC)</p>
+        <p><strong>Adresse :</strong> Boulevard de Marseille, face à Bernabé, Km 4, Treichville, Abidjan, Côte d'Ivoire (BP 1501 Abidjan 18)</p>
+        <p><strong>Directeur de la DRIT :</strong> Asseu Olivier</p>
+        <p class="motto">« Une vision créative et dynamique de l'innovation »</p>
+      </div>
+    </section>
+
+    <!-- Missions -->
+    <section class="card fade-in">
+      <h2>Missions de l'école</h2>
+      <ul class="missions">
+        <li>Former des cadres spécialisés dans les Technologies de l’Information et de la Communication, notamment dans les domaines des réseaux et services de télécommunications / TIC, de la régulation et de la Cybersécurité.</li>
+        <li>Mener toute recherche dans le secteur des Technologies de l’Information et de la Communication.</li>
+        <li>Mettre en place un cadre de coopération nationale et internationale dans le domaine de la formation en matière de télécommunications / TIC.</li>
+      </ul>
+      <p class="closing">À votre disposition pour un transfert de connaissances et de compétences.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 — ERIS 1 | ESATIC</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
