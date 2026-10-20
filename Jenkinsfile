@@ -1,22 +1,32 @@
-
+@'
 pipeline {
     agent any
 
     triggers {
-        githubPush()
+        pollSCM('* * * * *')
     }
 
     stages {
-        stage('Récupération du code source') {
+        stage('Récupération du code') {
             steps {
                 checkout scm
             }
         }
-
-        stage('Affichage de la date système') {
+        stage('Date système') {
             steps {
-                sh 'date'
+                script {
+                    if (isUnix()) {
+                        sh 'date'
+                    } else {
+                        bat 'date /t && time /t'
+                    }
+                }
             }
         }
     }
 }
+'@ | Set-Content -Encoding UTF8 .\Jenkinsfile
+
+git add Jenkinsfile
+git commit -m "Fix Jenkinsfile compatible Windows"
+git push origin main
