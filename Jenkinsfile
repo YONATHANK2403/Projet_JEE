@@ -1,32 +1,21 @@
-@'
 pipeline {
     agent any
 
     triggers {
-        pollSCM('* * * * *')
+        githubPush()   // déclenché par le webhook GitHub
+        // alternative sans webhook : pollSCM('* * * * *')
     }
 
     stages {
         stage('Récupération du code') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/YONATHANK2403/Projet_JEE.git'
             }
         }
         stage('Date système') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'date'
-                    } else {
-                        bat 'date /t && time /t'
-                    }
-                }
+                sh 'date'
             }
         }
     }
 }
-'@ | Set-Content -Encoding UTF8 .\Jenkinsfile
-
-git add Jenkinsfile
-git commit -m "Fix Jenkinsfile compatible Windows"
-git push origin main
